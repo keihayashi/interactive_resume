@@ -108,10 +108,15 @@ $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
 
 var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
-$("#header").append(formattedTwitter);
+$("#topContacts").append(formattedTwitter);
 var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-$("#header").append(formattedGithub);
-
+$("#topContacts").append(formattedGithub);
+var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+$("#topContacts").append(formattedLocation);
+var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+$("#topContacts").append(formattedMobile);
+var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+$("#topContacts").append(formattedEmail);
 
 var formattedPicture = HTMLbioPic.replace("%data%", bio.biopic);
 $("#header").append(formattedPicture);
