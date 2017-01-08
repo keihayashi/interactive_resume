@@ -187,4 +187,4 @@ education.display = function() {
   }
 }
 education.display();
-// $("#mapDiv").append(googleMap);
+$("#mapDiv").append(googleMap);
