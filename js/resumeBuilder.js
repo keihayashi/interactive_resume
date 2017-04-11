@@ -6,14 +6,17 @@ var bio = {
   "name" : "Kei Hayashi",
   "role" : "Backend Software Engineer",
   "contacts" : {
-    "mobile" : "-",
-    "email" : "-",
+    "mobile" : "617-500-3204",
+    "email" : "keilee210@gmail.com",
     "github" : "keihayashi",
     "twitter" : "@ke1hayash1",
-    "location" : "San Bruno"
+    "location" : "Millbrae"
   },
   "welcomeMessaege" : "Welcome to my resume page.",
-  "skills" : ["C++", "Python", "Bootstrap", "Grunt", "jQuery", "Git/Github", "Machine Learning"],
+  "skills" : [["Programming Languages:", "C/C++", "Python", "SQL", "Java", "JavaScript", "HTML5", "CSS3", "Octave"],
+              ["Frameworks:", "Bootstrap", "Grunt", "webapp2", "jinja2", "jQuery", "OAuth2.0"],
+              ["Other:", "Git/Github", "Machine Learning", "Linux"],
+              ["Languages:", "Japanese (native)", "Chinese (near native)", "English (business level)"]],
   "biopic" : "images/me.jpg"
 }
 
@@ -123,10 +126,14 @@ $("#header").append(formattedPicture);
 
 
 if (bio.skills.length > 0) {
-  $("#header").append(HTMLskillsStart);
+  $("#header").append(HTMLskillsTitle);
   for (i = 0; i < bio.skills.length; i++) {
-    var formattedSkills = HTMLskills.replace("%data%", bio.skills[i]);
-    $("#skills").append(formattedSkills);
+    $("#header").append(HTMLskillsStart);
+    for (j = 0; j < bio.skills[i].length; j++) {
+      var formattedSkills = HTMLskills.replace("%data%", bio.skills[i][j]);
+      console.log(formattedSkills);
+      $(".skills:last").append(formattedSkills);
+    }
   }
 }
 
